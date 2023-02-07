@@ -4,71 +4,78 @@
   background-color: #5cdb95;
   color: #000000;
   align-content: center;
-  max-width: 100%
 }
 
 .imageSection {
   display: inline-flex;
-  align-content: center;
-  max-height: 500px;
-  max-width: 800px;
+  flex-direction: row;
+  justify-content: center;
+  width: 40vw;
+  height: 25vh;
 }
 
-.Navbar{
-  padding: 10px;
-  margin: 10px;
-
+.ReviewImg {
+  max-width: 50vw;
+  max-height: 30vh;
 }
 
-.Reviews{
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 20vh;
-    height: 20vh;
-    padding: 1vh;
-    margin: 2vh;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(127, 144, 238);
-  
+.Reviews {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20vw;
+  height: 20vh;
+  padding: 1vh;
+  margin: 2vh;
+  border:10px groove rgb(29, 32, 100);
+  background-color: rgb(127, 144, 238);
 }
 
-.ReviewTitle{
-  width: 20vh;
+.reviewBody {
+  margin: 30px;
+}
+
+.ReviewTitle {
+  width: 20vw;
   font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.AllReviewsImg{
-  max-width: 15vh;
+.AllReviewsImg {
+  max-width: 15vw;
   max-height: 15vh;
 }
 
-.ArrowButton{
-  max-height: 20px;;
+.ArrowButton {
+  max-height: 3vh;
   display: flex;
   justify-content: bottom;
   align-items: bottom;
-  height: 100px;
-  padding-top: 500px;
+  padding-top: 12vh;
 }
 
-.CommentsBox{
+.CommentsBox {
   text-align: left;
-  border: 3px solid rgb(12, 22, 94);
+  border: 10px groove rgb(12, 22, 94);
   padding: 2vh;
+  min-height: 38vh;
 }
 
-.CommentAuthor{
+.CommentAuthor {
   text-decoration: underline;
 }
 
-.ThumbsUp{
+.ThumbsUp {
   max-height: 20px;
 }
 
-.CommentTitle{
+.CommentTitle {
   text-decoration: underline;
+}
+.users_link {
+  align-self: right;
+  padding: 10px;
+  margin: 10px;
 }

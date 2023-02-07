@@ -13,7 +13,6 @@ function Comments() {
     });
   }, [review_Id]);
 
-  console.log(comments);
 
   return (
     <div className="Comments">
