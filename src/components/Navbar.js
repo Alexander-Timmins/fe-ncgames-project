@@ -9,7 +9,7 @@ function Navbar() {
       <Link className='Nav_link' to='/review'>
         Reviews
       </Link>
-      <Link className='Nav_link' to='/user'>
+      <Link className='Nav_link' to='/users'>
         Users
       </Link>
     </nav>
