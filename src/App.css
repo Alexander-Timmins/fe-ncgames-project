@@ -58,6 +58,7 @@
 .CommentsBox{
   text-align: left;
   border: 3px solid rgb(12, 22, 94);
+  padding: 2vh;
 }
 
 .CommentAuthor{
