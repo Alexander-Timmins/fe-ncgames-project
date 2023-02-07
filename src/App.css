@@ -1,4 +1,73 @@
 .App {
+  padding-top: 10px;
   text-align: center;
+  background-color: #5cdb95;
+  color: #000000;
+  align-content: center;
+  max-width: 100%
 }
 
+.imageSection {
+  display: inline-flex;
+  align-content: center;
+  max-height: 500px;
+  max-width: 800px;
+}
+
+.Navbar{
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.Reviews{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20vh;
+    height: 20vh;
+    padding: 1vh;
+    margin: 2vh;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(127, 144, 238);
+  
+}
+
+.ReviewTitle{
+  width: 20vh;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.AllReviewsImg{
+  max-width: 15vh;
+  max-height: 15vh;
+}
+
+.ArrowButton{
+  max-height: 20px;;
+  display: flex;
+  justify-content: bottom;
+  align-items: bottom;
+  height: 100px;
+  padding-top: 500px;
+}
+
+.CommentsBox{
+  text-align: left;
+  border: 3px solid rgb(12, 22, 94);
+}
+
+.CommentAuthor{
+  text-decoration: underline;
+}
+
+.ThumbsUp{
+  max-height: 20px;
+}
+
+.CommentTitle{
+  text-decoration: underline;
+}
