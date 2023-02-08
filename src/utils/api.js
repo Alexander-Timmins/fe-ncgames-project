@@ -31,7 +31,7 @@ export const getComments = (review_Id) => {
 
 export const voteReviewFunc = (review_Id, number) => {
   return gamesAPI
-    .patch(`review/${review_Id}`,{ inc_votes: number })
+    .patch(`review/${review_Id}`, { inc_votes: number })
     .then((response) => {
       return response.data;
     });
@@ -39,7 +39,15 @@ export const voteReviewFunc = (review_Id, number) => {
 
 export const voteCommentFunc = (comment_id, number) => {
   return gamesAPI
-    .patch(`comments/${comment_id}`,{ inc_votes: number })
+    .patch(`comments/${comment_id}`, { inc_votes: number })
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const postComment = (review_id, username, comment) => {
+  return gamesAPI
+    .post(`review/${review_id}/comments`, { username: username, body: comment })
     .then((response) => {
       return response.data;
     });

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import NewComment from './NewComment';
+import { useParams } from 'react-router-dom';
 import { getComments, voteCommentFunc } from '../utils/api';
 
 function Comments() {
@@ -12,6 +12,7 @@ function Comments() {
 
   useEffect(() => {
     getComments(review_Id).then((commentsFromAPI) => {
+      commentsFromAPI.reverse();
       setComments(commentsFromAPI);
     });
   }, [review_Id]);
@@ -49,12 +50,18 @@ function Comments() {
   return (
     <div className='Comments'>
       <div>
-        <NewComment />
+        <NewComment comments={comments} setComments={setComments} />
       </div>
       <h1 className='CommentTitle'>Comments</h1>
       {comments.map((comment) => (
         <ol key={comment.comment_id}>
-          <h2 className='CommentAuthor'>{comment.author}</h2>
+          <h2 className='CommentAuthor'>
+            <img
+              className='userImgComment'
+              src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+            ></img>{' '}
+            {comment.author}
+          </h2>
           <h3 className='CommentBody'>{comment.body}</h3>
           <h3 className='CommentVotes'>
             <img
@@ -62,8 +69,9 @@ function Comments() {
                 upvote(comment);
               }}
               className='ThumbsUp'
-              src='https://png.pngtree.com/png-vector/20210629/ourlarge/pngtree-red-youtube-like-button-png-image_3538748.jpg'
+              src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
             ></img>
+            {' '}
             {comment.votes} {errors ? <div>Try again later</div> : <div></div>}
           </h3>
         </ol>
