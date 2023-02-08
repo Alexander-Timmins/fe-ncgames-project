@@ -99,7 +99,15 @@
 .CommentVotes{
   font-size: 3vh;
 }
+.CommentBox{
+  width: 95vw;
+  height: 100px;
+}
 
+.submitButton{
+  height: 40px;
+  width: 100px
+}
 .ThumbsUp {
   max-height: 3vh;
 }
