@@ -9,11 +9,10 @@ function NewComment({ comments, setComments }) {
   const { review_Id } = useParams();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (comment[0] === undefined) {
-    } else {
+    if (comment[0] !== undefined) {
       postComment(review_Id, user, comment).then((response) => {
-        setComments([response.comment, ...comments]);
-        setErrors(false).catch((err) => {
+        setErrors(false);
+        setComments([response.comment, ...comments]).catch((err) => {
           console.log(err);
           setComments([...comments]);
           setErrors(true);
@@ -33,7 +32,9 @@ function NewComment({ comments, setComments }) {
             setComment(e.target.value);
           }}
         ></input>
-        <button className="submitButton" type='submit'>Comment</button>
+        <button className='submitButton' type='submit'>
+          Comment
+        </button>
         <h1>{error ? 'Something went wrong, please try again later' : ''}</h1>
       </form>
     </div>
