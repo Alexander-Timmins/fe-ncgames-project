@@ -6,7 +6,6 @@ function NewComment({ comments, setComments }) {
   const user = 'tickle122';
   const [comment, setComment] = useState('');
   const [error, setErrors] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
   const { review_Id } = useParams();
   const handleSubmit = (e) => {
     e.preventDefault();
