@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import NewComment from './NewComment';
 import { getComments, voteCommentFunc } from '../utils/api';
 
 function Comments() {
   const [comments, setComments] = useState([]);
   const [errors, setErrors] = useState(false);
-  const [currentComment, setCurrentComment] = useState([]);
-  const [vote, setVote] = useState(false);
+  const [hasVoted, setVote] = useState(false);
 
   const { review_Id } = useParams();
 
@@ -17,31 +17,30 @@ function Comments() {
   }, [review_Id]);
 
   function upvote(comment) {
-    console.log('vote');
-    if (vote === false) {
-      voteCommentFunc(comment.comment_id, 1)
+    if (hasVoted) {
+      voteCommentFunc(comment.comment_id, -1)
         .then(() => {
-          setVote(true);
+          comment.votes--;
+          setVote(false);
           setErrors(false);
-          comment.votes++;
         })
         .catch((err) => {
-          comment.votes--;
+          comment.votes++;
           console.log(err);
-          setVote(false);
+          setVote(true);
           setErrors(true);
         });
     } else {
-      voteCommentFunc(comment.comment_id, -1)
+      voteCommentFunc(comment.comment_id, 1)
         .then(() => {
-          setVote(false);
+          comment.votes++;
+          setVote(true);
           setErrors(false);
-          comment.votes--;
         })
         .catch((err) => {
-          comment.votes++;
+          comment.votes--;
           console.log(err);
-          setVote(true);
+          setVote(false);
           setErrors(true);
         });
     }
@@ -49,6 +48,9 @@ function Comments() {
 
   return (
     <div className='Comments'>
+      <div>
+        <NewComment />
+      </div>
       <h1 className='CommentTitle'>Comments</h1>
       {comments.map((comment) => (
         <ol key={comment.comment_id}>
