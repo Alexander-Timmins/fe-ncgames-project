@@ -4,13 +4,15 @@
   background-color: rgb(26, 25, 25);
   color: #000000;
   align-content: center;
+  max-height: 100vh;
 }
 
 .logo{
   max-height: 10vh;
+  max-width: 20vh;
 }
 .Navbar {
-  font-size: 30px;
+  font-size: 3vh;
 }
 .SingleReview {
   margin-top: 1vh;
@@ -27,8 +29,8 @@
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
-  width: 40vw;
-  height: 25vh;
+  max-width: 40vw;
+  max-height: 25vh;
 }
 
 .ReviewImg {
@@ -51,6 +53,10 @@
 
 .reviewBody {
   margin: 30px;
+}
+
+.userImgComment{
+  max-height: 2vh;
 }
 
 .ReviewTitle {
@@ -91,11 +97,11 @@
 }
 
 .CommentVotes{
-  font-size: 60px;
+  font-size: 3vh;
 }
 
 .ThumbsUp {
-  max-height: 50px;
+  max-height: 3vh;
 }
 
 .CommentTitle {
