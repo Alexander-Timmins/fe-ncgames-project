@@ -1,11 +1,28 @@
 .App {
   padding-top: 10px;
   text-align: center;
-  background-color: #5cdb95;
+  background-color: rgb(26, 25, 25);
   color: #000000;
   align-content: center;
 }
 
+.logo{
+  max-height: 10vh;
+}
+.Navbar {
+  font-size: 30px;
+}
+.SingleReview {
+  margin-top: 1vh;
+  border-top: 4px solid rgb(26, 25, 25);
+  background-color: #ebeceb;
+}
+
+.ReviewList {
+  margin-top: 1vh;
+  border-top: 4px solid rgb(26, 25, 25);
+  background-color: #ebeceb;
+}
 .imageSection {
   display: inline-flex;
   flex-direction: row;
@@ -23,12 +40,13 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
+
   width: 20vw;
-  height: 20vh;
+  height: 25vh;
   padding: 1vh;
   margin: 2vh;
-  border:10px groove rgb(29, 32, 100);
-  background-color: rgb(127, 144, 238);
+  border: 10px groove rgb(180, 35, 35);
+  background-color: #ebeceb;
 }
 
 .reviewBody {
@@ -53,29 +71,48 @@
   display: flex;
   justify-content: bottom;
   align-items: bottom;
+  padding: 20px;
   padding-top: 12vh;
 }
 
 .CommentsBox {
   text-align: left;
-  border: 10px groove rgb(12, 22, 94);
+  border-top: 4px solid rgb(26, 25, 25);
   padding: 2vh;
   min-height: 38vh;
+}
+
+.reviewOwner{
+  text-decoration: underline;
 }
 
 .CommentAuthor {
   text-decoration: underline;
 }
 
+.CommentVotes{
+  font-size: 60px;
+}
+
 .ThumbsUp {
-  max-height: 20px;
+  max-height: 50px;
 }
 
 .CommentTitle {
   text-decoration: underline;
 }
+
 .users_link {
   align-self: right;
   padding: 10px;
   margin: 10px;
+  color: white
+}
+
+.review_link{
+    align-self: right;
+    padding: 10px;
+    margin: 10px;
+    color: white
+  
 }
