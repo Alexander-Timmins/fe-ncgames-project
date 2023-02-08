@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReview, getReviews } from '../utils/api';
+import { getReview, getReviews, voteReviewFunc } from '../utils/api';
 import Comments from './Comments';
 import { Link } from 'react-router-dom';
 
 function Reviews() {
   const [review, setReview] = useState({});
   const [reviews, setReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
+  const [errors, setErrors] = useState(false);
+  const [vote, setVote] = useState(false);
   const { review_Id } = useParams();
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     getReview(review_Id).then((reviewFromAPI) => {
       setReview(reviewFromAPI);
-      setIsLoading(false)
+      setIsLoading(false);
     });
   }, [review_Id]);
 
@@ -24,7 +26,39 @@ function Reviews() {
     });
   }, []);
 
-  if (isLoading) {return (<p>Loading...</p>)}
+  const upvote = () => {
+    if (vote === false) {
+      voteReviewFunc(review_Id, 1)
+        .then(() => {
+          setVote(true);
+          setErrors(false);
+          review.votes++;
+        })
+        .catch((err) => {
+          review.votes--;
+          console.log(err);
+          setVote(false);
+          setErrors(true);
+        });
+    } else {
+      voteReviewFunc(review_Id, -1)
+        .then(() => {
+          setVote(false);
+          setErrors(false);
+          review.votes--;
+        })
+        .catch((err) => {
+          review.votes++;
+          console.log(err);
+          setVote(true);
+          setErrors(true);
+        });
+    }
+  };
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className='SingleReview'>
       {
@@ -34,7 +68,7 @@ function Reviews() {
             <Link
               className='Nav_link'
               to={`/review/${
-                +review_Id - 1 == 0 ? reviews.length : +review_Id - 1
+                +review_Id - 1 === 0 ? reviews.length : +review_Id - 1
               }`}
             >
               <img
@@ -61,7 +95,14 @@ function Reviews() {
           </div>
           <h2 className='reviewOwner'>{review.owner} </h2>
           <h3 className='reviewBody'>{review.review_body}</h3>
-          <h3 className='reviewUpvotes'>Upvotes: {review.votes}</h3>
+          <h3 className='CommentVotes'>
+            <img
+              onClick={upvote}
+              className='ThumbsUp'
+              src='https://png.pngtree.com/png-vector/20210629/ourlarge/pngtree-red-youtube-like-button-png-image_3538748.jpg'
+            ></img>
+            {review.votes} {errors ? <div>Try again later</div> : <div></div>}
+          </h3>
         </div>
       }
       <div className='CommentsBox'>

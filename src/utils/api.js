@@ -23,9 +23,24 @@ export const getUsers = () => {
 };
 
 export const getComments = (review_Id) => {
+  return gamesAPI.get(`${review_Id}/comments`).then((response) => {
+    console.log(response);
+    return response.data.comments;
+  });
+};
+
+export const voteReviewFunc = (review_Id, number) => {
   return gamesAPI
-    .get(`${review_Id}/comments`)
+    .patch(`review/${review_Id}`,{ inc_votes: number })
     .then((response) => {
-      return response.data.comments;
+      return response.data;
+    });
+};
+
+export const voteCommentFunc = (comment_id, number) => {
+  return gamesAPI
+    .patch(`comments/${comment_id}`,{ inc_votes: number })
+    .then((response) => {
+      return response.data;
     });
 };
