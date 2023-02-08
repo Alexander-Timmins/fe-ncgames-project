@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import NewComment from './NewComment';
 import { useParams } from 'react-router-dom';
+import NewComment from './NewComment';
 import { getComments, voteCommentFunc } from '../utils/api';
 
 function Comments() {
