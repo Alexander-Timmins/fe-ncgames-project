@@ -23,7 +23,7 @@ function AllReviews() {
               ></img>
             </Link>
           </div>
-          <h3 className='reviewUpvotes'>Upvotes: {review.votes}</h3>
+  
         </div>
       ))}
     </div>

@@ -52,28 +52,31 @@ function Comments() {
       <div>
         <NewComment comments={comments} setComments={setComments} />
       </div>
+
       <h1 className='CommentTitle'>Comments</h1>
       {comments.map((comment) => (
         <ol key={comment.comment_id}>
-          <h2 className='CommentAuthor'>
-            <img
-              className='userImgComment'
-              src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
-            ></img>{' '}
-            {comment.author}
-          </h2>
-          <h3 className='CommentBody'>{comment.body}</h3>
-          <h3 className='CommentVotes'>
-            <img
-              onClick={function () {
-                upvote(comment);
-              }}
-              className='ThumbsUp'
-              src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
-            ></img>
-            {' '}
-            {comment.votes} {errors ? <div>Try again later</div> : <div></div>}
-          </h3>
+          <div className='EachComment'>
+            <h2 className='CommentAuthor'>
+              <img
+                className='userImgComment'
+                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
+              ></img>{' '}
+              {comment.author}
+            </h2>
+            <h3 className='CommentBody'>{comment.body}</h3>
+            <h3 className='CommentVotes'>
+              <img
+                onClick={function () {
+                  upvote(comment);
+                }}
+                className='ThumbsUp'
+                src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
+              ></img>{' '}
+              {comment.votes}{' '}
+              {errors ? <div>Try again later</div> : <div></div>}
+            </h3>
+          </div>
         </ol>
       ))}
     </div>

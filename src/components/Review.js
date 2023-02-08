@@ -95,7 +95,7 @@ function Reviews() {
           </div>
           <h2 className='reviewOwner'>{review.owner} </h2>
           <h3 className='reviewBody'>{review.review_body}</h3>
-          <h3 className='CommentVotes'>
+          <h3 className='ReviewVotes'>
             <img
               onClick={upvote}
               className='ThumbsUp'
