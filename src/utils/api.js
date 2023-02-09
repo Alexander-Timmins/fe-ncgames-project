@@ -17,9 +17,11 @@ export const getReview = (review_Id) => {
 };
 
 export const getReviews = (category) => {
-  return gamesAPI.get(`/review`, {params: {category: category.categoryInUse}}).then((response) => {
-    return response.data.reviews;
-  });
+  return gamesAPI
+    .get(`/review`, { params: { category: category.categoryInUse } })
+    .then((response) => {
+      return response.data.reviews;
+    });
 };
 
 export const getUsers = () => {
@@ -30,7 +32,6 @@ export const getUsers = () => {
 
 export const getComments = (review_Id) => {
   return gamesAPI.get(`${review_Id}/comments`).then((response) => {
-    console.log(response);
     return response.data.comments;
   });
 };
@@ -58,3 +59,9 @@ export const postComment = (review_id, username, comment) => {
       return response.data;
     });
 };
+
+export const deleteComment = (commentId) => {
+  return gamesAPI.delete(`comments/${commentId}`).then((response) => {
+    return response.data;
+  })
+}
