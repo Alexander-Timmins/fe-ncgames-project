@@ -16,9 +16,10 @@ export const getReview = (review_Id) => {
   });
 };
 
-export const getReviews = (category) => {
+export const getReviews = (query) => {
+  console.log(query)
   return gamesAPI
-    .get(`/review`, { params: { category: category.categoryInUse } })
+    .get(`/review`, { params: { category: query.categoryInUse, sort_by: query.sortBy, order: query.order} })
     .then((response) => {
       return response.data.reviews;
     });
