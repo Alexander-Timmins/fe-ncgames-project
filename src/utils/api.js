@@ -16,8 +16,8 @@ export const getReview = (review_Id) => {
   });
 };
 
-export const getReviews = () => {
-  return gamesAPI.get(`/review/`).then((response) => {
+export const getReviews = (category) => {
+  return gamesAPI.get(`/review`, {params: {category: category.categoryInUse}}).then((response) => {
     return response.data.reviews;
   });
 };

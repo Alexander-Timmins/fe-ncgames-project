@@ -1,30 +1,19 @@
 import { useEffect, useState } from 'react';
 import { getReviews } from '../utils/api';
 import { Link } from 'react-router-dom';
-import Categories from './Categories';
 
-function AllReviews() {
+function AllReviews(category) {
   const [reviews, setReviews] = useState([]);
-  const [category, setCategory] = useState('');
-
+console.log(category)
   useEffect(() => {
-    getReviews().then((reviewsFromAPI) => {
-      if (category === '') {
-        setReviews(reviewsFromAPI);
-      } else {
-        let reviewsByCategory = reviewsFromAPI.filter(
-          (review) => review.category === category
-        );
-        setReviews(reviewsByCategory);
-      }
-    });
+
+    getReviews(category).then((reviewsFromAPI) => {
+      setReviews(reviewsFromAPI);
+    })
   }, [category]);
 
   return (
     <div>
-      <div className='CategoryList'>
-        <Categories setCategory={setCategory} />
-      </div>
       <div className='ReviewList'>
         {reviews.map((review) => (
           <div className='Reviews' key={review.review_id}>
