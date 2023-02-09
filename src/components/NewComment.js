@@ -7,6 +7,7 @@ function NewComment({ comments, setComments }) {
   const [comment, setComment] = useState('');
   const [error, setErrors] = useState(false);
   const { review_Id } = useParams();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (comment[0] !== undefined) {
