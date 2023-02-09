@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className='Navbar'>
 
-      <Link className='review_link' to='/review'>
+      <Link className='review_link' to='/reviews'>
         Reviews
       </Link>
       <Link className='users_link' to='/users'>

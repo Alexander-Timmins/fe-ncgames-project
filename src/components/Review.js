@@ -21,7 +21,7 @@ function Reviews() {
   }, [review_Id]);
 
   useEffect(() => {
-    getReviews().then((reviewsFromAPI) => {
+    getReviews({ categoryInUse: undefined }).then((reviewsFromAPI) => {
       setReviews(reviewsFromAPI);
     });
   }, []);

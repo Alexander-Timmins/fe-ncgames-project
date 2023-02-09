@@ -61,7 +61,7 @@ function Comments() {
               <img
                 className='userImgComment'
                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
-              ></img>{' '}
+              ></img>{' '} - {" "}
               {comment.author}
             </h2>
             <h3 className='CommentBody'>{comment.body}</h3>

@@ -7,12 +7,38 @@
   max-height: 100vh;
 }
 
-.logo{
+.logo {
   max-height: 10vh;
   max-width: 20vh;
 }
 .Navbar {
   font-size: 3vh;
+}
+
+.CategoryList {
+  color: #ebeceb;
+  font-size: 20px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.EachCategory:hover {
+  color: rgb(26, 25, 25);
+  background-color: #ebeceb;
+}
+
+.EachCategory {
+  font-size: 1vh;
+  color: white;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  border: 4px outset white;
+  height: 4vh;
+  line-height: 1.5vh;
+  width: 4vh;
+  margin: 1vw;
+  padding: 0.75vh;
 }
 .SingleReview {
   margin-top: 1vh;
@@ -47,15 +73,19 @@
   height: 20vh;
   padding: 5px;
   margin: 2vh;
-  border: 10px groove rgb(180, 35, 35);
+  border: 10px inset rgb(180, 35, 35);
   background-color: #ebeceb;
+}
+
+.Reviews:hover {
+  background-color: #d4d2d2;
 }
 
 .reviewBody {
   margin: 30px;
 }
 
-.userImgComment{
+.userImgComment {
   max-height: 2vh;
 }
 
@@ -81,6 +111,10 @@
   padding-top: 12vh;
 }
 
+.ArrowButton:hover {
+  max-height: 4vh;
+}
+
 .CommentsBox {
   text-align: left;
   border-top: 4px solid rgb(26, 25, 25);
@@ -88,8 +122,7 @@
   min-height: 38vh;
 }
 
-
-.reviewOwner{
+.reviewOwner {
   text-decoration: underline;
 }
 
@@ -97,38 +130,38 @@
   text-decoration: underline;
 }
 
-.ReviewVotes{
-    font-size: 40px;
-    text-align: center;
-  
+.ReviewVotes {
+  font-size: 40px;
+  text-align: center;
 }
 
-.CommentVotes{
+.CommentVotes {
   display: block;
-  align-content: center;
   font-size: 40px;
-  border: 1px solid rgb(26, 25, 25);;
+
   max-width: 10vw;
-  text-align: center;
- 
+  padding: 4px;
+  text-align: left;
 }
-.CommentBox{
+
+.CommentBox {
   width: 95vw;
   height: 100px;
-  
 }
 
-.EachComment{
-border-bottom: 1px solid black;
-
+.EachComment {
+  border-bottom: 1px solid black;
 }
-.submitButton{
+.submitButton {
   height: 40px;
-  width: 100px
+  width: 100px;
 }
 .ThumbsUp {
   max-height: 30px;
-  
+}
+
+.ThumbsUp:hover {
+  border: 3px inset rgb(26, 25, 25);
 }
 
 .CommentTitle {
@@ -139,13 +172,12 @@ border-bottom: 1px solid black;
   align-self: right;
   padding: 10px;
   margin: 10px;
-  color: white
+  color: white;
 }
 
-.review_link{
-    align-self: right;
-    padding: 10px;
-    margin: 10px;
-    color: white
-  
+.review_link {
+  align-self: right;
+  padding: 10px;
+  margin: 10px;
+  color: white;
 }
