@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import NewComment from './NewComment';
 import { useParams } from 'react-router-dom';
-import { getComments, voteCommentFunc } from '../utils/api';
+import { getComments, voteCommentFunc, deleteComment } from '../utils/api';
 
 function Comments() {
   const [comments, setComments] = useState([]);
   const [errors, setErrors] = useState(false);
   const [hasVoted, setVote] = useState(false);
+  const [commentDeleted, setCommentDeleted] = useState(false);
 
   const { review_Id } = useParams();
 
@@ -15,7 +16,7 @@ function Comments() {
       commentsFromAPI.reverse();
       setComments(commentsFromAPI);
     });
-  }, [review_Id]);
+  }, [review_Id, commentDeleted]);
 
   function upvote(comment) {
     if (hasVoted) {
@@ -47,6 +48,14 @@ function Comments() {
     }
   }
 
+  function deleteFunc(comment) {
+    setCommentDeleted(false);
+    setComments(comments.filter((e) => e.id === comment.id));
+    deleteComment(comment.comment_id).then(() => {
+      setCommentDeleted(true);
+    });
+  }
+
   return (
     <div className='Comments'>
       <div>
@@ -61,8 +70,8 @@ function Comments() {
               <img
                 className='userImgComment'
                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
-              ></img>{' '} - {" "}
-              {comment.author}
+              ></img>{' '}
+              - {comment.author}
             </h2>
             <h3 className='CommentBody'>{comment.body}</h3>
             <h3 className='CommentVotes'>
@@ -76,6 +85,13 @@ function Comments() {
               {comment.votes}{' '}
               {errors ? <div>Try again later</div> : <div></div>}
             </h3>
+            <img
+              className='DeleteButton'
+              src='https://www.pngmart.com/files/3/Delete-Button-PNG-File.png'
+              onClick={() => {
+                deleteFunc(comment);
+              }}
+            ></img>
           </div>
         </ol>
       ))}
