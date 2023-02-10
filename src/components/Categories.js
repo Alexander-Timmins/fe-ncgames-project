@@ -38,43 +38,43 @@ function Categories() {
         <div className='dropdown'>
           <button className='dropbtn'>Sort By</button>
           <div className='dropdown-content'>
-            <a
-              href='#'
+            <button
+              
               onClick={() => {
                 setSortBy('created_at');
               }}
             >
               Date
-            </a>
-            <a
-              href='#'
+            </button>
+            <button
+             
               onClick={() => {
                 setSortBy('votes');
               }}
             >
               Votes
-            </a>
+            </button>
           </div>
         </div>
         <div className='dropdown'>
           <button className='dropbtn'>Order in</button>
           <div className='dropdown-content'>
-            <a
-              href='#'
+            <button
+            
               onClick={() => {
                 setOrderBy('asc');
               }}
             >
               Ascending
-            </a>
-            <a
-              href='#'
+            </button>
+            <button
+            
               onClick={() => {
                 setOrderBy('desc');
               }}
             >
               Descending
-            </a>
+            </button>
           </div>
         </div>
       </div>
