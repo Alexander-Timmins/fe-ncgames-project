@@ -4,7 +4,7 @@ import { getReview, getReviews, voteReviewFunc } from '../utils/api';
 import Comments from './Comments';
 import { Link } from 'react-router-dom';
 
-function Reviews() {
+function Reviews({user}) {
   const [review, setReview] = useState({});
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -109,7 +109,7 @@ function Reviews() {
         </div>
       }
       <div className='CommentsBox'>
-        <Comments />
+        <Comments user={user} />
       </div>
     </div>
   );

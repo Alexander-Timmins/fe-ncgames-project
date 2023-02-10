@@ -27,7 +27,7 @@ export const getReviews = (query) => {
 
 export const getUsers = () => {
   return gamesAPI.get('/user').then((response) => {
-    return response.data.users;
+    return response.data;
   });
 };
 
@@ -54,6 +54,7 @@ export const voteCommentFunc = (comment_id, number) => {
 };
 
 export const postComment = (review_id, username, comment) => {
+  console.log(username)
   return gamesAPI
     .post(`review/${review_id}/comments`, { username: username, body: comment })
     .then((response) => {

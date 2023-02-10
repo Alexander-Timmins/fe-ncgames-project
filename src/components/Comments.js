@@ -3,7 +3,7 @@ import NewComment from './NewComment';
 import { useParams } from 'react-router-dom';
 import { getComments, voteCommentFunc, deleteComment } from '../utils/api';
 
-function Comments() {
+function Comments({user}) {
   const [comments, setComments] = useState([]);
   const [errors, setErrors] = useState(false);
   const [hasVoted, setVote] = useState(false);
@@ -59,7 +59,7 @@ function Comments() {
   return (
     <div className='Comments'>
       <div>
-        <NewComment comments={comments} setComments={setComments} />
+        <NewComment comments={comments} setComments={setComments} user={user}/>
       </div>
 
       <h1 className='CommentTitle'>Comments</h1>
