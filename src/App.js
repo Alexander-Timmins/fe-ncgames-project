@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Categories from './components/Categories';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [user, setUser] = useState('tickle122')
