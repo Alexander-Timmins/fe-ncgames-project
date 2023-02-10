@@ -3,7 +3,7 @@ import NewComment from './NewComment';
 import { useParams } from 'react-router-dom';
 import { getComments, voteCommentFunc, deleteComment } from '../utils/api';
 
-function Comments({user}) {
+function Comments({ user }) {
   const [comments, setComments] = useState([]);
   const [errors, setErrors] = useState(false);
   const [hasVoted, setVote] = useState(false);
@@ -59,7 +59,7 @@ function Comments({user}) {
   return (
     <div className='Comments'>
       <div>
-        <NewComment comments={comments} setComments={setComments} user={user}/>
+        <NewComment comments={comments} setComments={setComments} user={user} />
       </div>
 
       <h1 className='CommentTitle'>Comments</h1>
@@ -87,6 +87,7 @@ function Comments({user}) {
               {comment.votes}{' '}
               {errors ? <div>Try again later</div> : <div></div>}
             </h3>
+            {(comment.author === user) ?
             <img
               className='DeleteButton'
               alt='delete button'
@@ -95,6 +96,7 @@ function Comments({user}) {
                 deleteFunc(comment);
               }}
             ></img>
+            : ""}
           </div>
         </ol>
       ))}
