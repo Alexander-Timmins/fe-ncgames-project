@@ -8,8 +8,8 @@ function Categories() {
   const [categories, setCategories] = useState([]);
   const { category } = useParams();
   const [sortBy, setSortBy] = useState('created_at');
-  const [orderBy, setOrderBy] = useState('asc')
-  
+  const [orderBy, setOrderBy] = useState('asc');
+
   useEffect(() => {
     getCategories().then((data) => {
       setCategories(data.categories);
@@ -39,6 +39,7 @@ function Categories() {
           <button className='dropbtn'>Sort By</button>
           <div className='dropdown-content'>
             <a
+              href='#'
               onClick={() => {
                 setSortBy('created_at');
               }}
@@ -46,6 +47,7 @@ function Categories() {
               Date
             </a>
             <a
+              href='#'
               onClick={() => {
                 setSortBy('votes');
               }}
@@ -58,6 +60,7 @@ function Categories() {
           <button className='dropbtn'>Order in</button>
           <div className='dropdown-content'>
             <a
+              href='#'
               onClick={() => {
                 setOrderBy('asc');
               }}
@@ -65,6 +68,7 @@ function Categories() {
               Ascending
             </a>
             <a
+              href='#'
               onClick={() => {
                 setOrderBy('desc');
               }}
