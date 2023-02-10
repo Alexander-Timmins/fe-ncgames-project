@@ -36,6 +36,7 @@ function AllReviews(props) {
                   {' '}
                   <img
                     key={review.created_at}
+                    alt={review.created_at}
                     className='ThumbsUpAllReviews'
                     src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
                   ></img>{' '}

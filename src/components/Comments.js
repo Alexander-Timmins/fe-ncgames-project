@@ -69,6 +69,7 @@ function Comments() {
             <h2 className='CommentAuthor'>
               <img
                 className='userImgComment'
+                alt='user'
                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
               ></img>{' '}
               - {comment.author}
@@ -80,6 +81,7 @@ function Comments() {
                   upvote(comment);
                 }}
                 className='ThumbsUp'
+                alt='vote button'
                 src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
               ></img>{' '}
               {comment.votes}{' '}
@@ -87,6 +89,7 @@ function Comments() {
             </h3>
             <img
               className='DeleteButton'
+              alt='delete button'
               src='https://www.pngmart.com/files/3/Delete-Button-PNG-File.png'
               onClick={() => {
                 deleteFunc(comment);

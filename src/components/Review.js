@@ -73,6 +73,7 @@ function Reviews() {
             >
               <img
                 className='ArrowButton'
+                alt='leftArrow'
                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Eo_circle_red_arrow-left.svg/512px-Eo_circle_red_arrow-left.svg.png?20200417173028'
               ></img>
             </Link>
@@ -89,6 +90,7 @@ function Reviews() {
             >
               <img
                 className='ArrowButton'
+                alt='rightArrow'
                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Eo_circle_red_arrow-right.svg/2048px-Eo_circle_red_arrow-right.svg.png'
               ></img>
             </Link>
@@ -99,6 +101,7 @@ function Reviews() {
             <img
               onClick={upvote}
               className='ThumbsUp'
+              alt="vote button"
               src='https://blog.jdrgroup.co.uk/hubfs/Blog_Images/How%20To%20Use%20Social%20Media%20%E2%80%98Like%E2%80%99%20Buttons.png'
             ></img>{' '}
             {review.votes} {errors ? <div>Try again later</div> : <div></div>}

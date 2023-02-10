@@ -22,6 +22,7 @@ function Categories() {
         <Link to='/reviews'>
           <img
             className='EachCategory'
+            alt='homebutton'
             key='AllCategories'
             src='https://www.freeiconspng.com/uploads/home-button-icon-png-23.png'
           ></img>
