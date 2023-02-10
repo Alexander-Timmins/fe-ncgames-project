@@ -3,7 +3,7 @@ import { postComment } from '../utils/api';
 import { useState } from 'react';
 
 function NewComment({ comments, setComments , user}) {
-console.log(user)
+
   const [comment, setComment] = useState('');
   const [error, setErrors] = useState(false);
   const { review_Id } = useParams();
